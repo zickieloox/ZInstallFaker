@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="market" />
 				<data android:scheme="http" />
-				<date android:scheme="https" />
+				<data android:scheme="https" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
