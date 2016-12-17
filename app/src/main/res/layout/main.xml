@@ -1,11 +1,26 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
-
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+	android:padding="16dp"
+	android:layout_gravity="center"
+	android:orientation="vertical">
+	
+	<TextView
+		android:textColor="#673AB7"
+		android:gravity="center"
+		android:id="@+id/mainTextView"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textSize="20sp"
+		android:text="@string/info" />
+	
+    <Button
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="40dp"
+		android:textColor="#CDDC39"
+		android:textSize="25sp"
+		android:text="@string/test_btn"
+		android:id="@+id/mainButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+</RelativeLayout>

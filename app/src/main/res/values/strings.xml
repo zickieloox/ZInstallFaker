@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Zic_InstallFaker</string>
-    <string name="hello_world">Hello world!</string>
-
+    <string name="app_name">Zic Install Faker</string>
+    <string name="fake_label">Fake This App!</string>
+	<string name="info">Created By Zickie Loox</string>
+	<string name="test_btn">TEST</string>
+	<string name="fake_this">Choose "Fake This App!" option</string>
+	<string name="working">It\'s working perfect!</string>
+	<string name="copied"> - Copied To Clipboard.</string>
+	<string name="error_url">Error! Invalid Playstore link.</string>
+	<string name="error_pkgname">Error! Cannot change the package name.</string>
+	<string name="error_create">Error! Cannot creat a new app.</string>
 </resources>
