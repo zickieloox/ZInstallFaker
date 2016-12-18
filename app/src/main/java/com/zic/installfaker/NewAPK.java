@@ -16,6 +16,7 @@ import net.lingala.zip4j.util.*;
 public class NewAPK extends Activity 
 {	
 	final String workDir = "/sdcard/Zickie";
+	final String xmlSamplePath = workDir + "/sample.xml";
 	final String xmlPath = workDir + "/AndroidManifest.xml";
 	final String apkPath = workDir + "/sample.apk";
 	String pkgName = "";
@@ -28,7 +29,7 @@ public class NewAPK extends Activity
 		Intent callerIntent = this.getIntent();
 		Bundle b = callerIntent.getExtras();
 		pkgName = (String) b.get("pkgName");
-		if(MainAxmlEditor.change(xmlPath, xmlPath, pkgName, "")) {
+		if(MainAxmlEditor.change(xmlSamplePath, xmlPath, pkgName, "")) {
 			copyXmlToApk();
 		}else {
 			Toast.makeText(this, getString(R.string.error_pkgname), Toast.LENGTH_LONG).show();
