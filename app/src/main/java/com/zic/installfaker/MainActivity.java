@@ -18,7 +18,7 @@ public class MainActivity extends Activity
 		findViewById(R.id.mainButton).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View p1) {
-				Toast.makeText(MainActivity.this, getString(R.string.fake_this), Toast.LENGTH_LONG).show();
+				Toast.makeText(MainActivity.this, getString(R.string.fake_this), Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(Intent.ACTION_VIEW);
 				intent.setData(Uri.parse("market://details?id=" + getString(R.string.working)));
 				startActivity(intent);
