@@ -17,6 +17,7 @@ import net.lingala.zip4j.util.*;
 
 public class NewAPK extends Activity 
 {	
+	private String assetsCopyDir;
 	private String workDir;
 	private String xmlSamplePath;
 	private String xmlPath;
@@ -28,7 +29,8 @@ public class NewAPK extends Activity
     {
         super.onCreate(savedInstanceState);
 		
-		workDir = "/data/data/" + getApplicationContext().getPackageName() + "/files";
+		assetsCopyDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+		workDir = assetsCopyDir + "/Zickie";
 		xmlSamplePath = workDir + "/sample.xml";
 		xmlPath = workDir + "/AndroidManifest.xml";
 		apkPath = workDir + "/sample.apk";
@@ -55,9 +57,10 @@ public class NewAPK extends Activity
 			parameters.setCompressionMethod(Zip4jConstants.COMP_DEFLATE);
 			parameters.setCompressionLevel(Zip4jConstants.DEFLATE_LEVEL_NORMAL);
 			zipFile.addFiles(filesToAdd, parameters);
-
+			
 			// install sample apk with new package name
 			installApk();
+			
 			Toast.makeText(this, pkgName, Toast.LENGTH_SHORT).show();
 		} catch (ZipException e) {
 			e.printStackTrace();
@@ -76,9 +79,9 @@ public class NewAPK extends Activity
 		SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
         if (prefs.getBoolean("first_run", true)) {
-            Toast.makeText(NewAPK.this, "First Run - Checking Necessary File!", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewAPK.this, "First Run - Checking Necessary File!", Toast.LENGTH_SHORT).show();
 			//copy assets
-			copyFileOrDir("files");
+			copyFileOrDir("Zickie");
             prefs.edit().putBoolean("first_run", false).commit();
 			return true;
         }else {
@@ -94,7 +97,7 @@ public class NewAPK extends Activity
 			if (assets.length == 0) {
 				copyFile(path);
 			} else {
-				String fullPath = "/data/data/" + this.getPackageName() + "/" + path;
+				String fullPath = assetsCopyDir + "/" + path;
 				File dir = new File(fullPath);
 				if (!dir.exists())
 					dir.mkdir();
@@ -114,7 +117,7 @@ public class NewAPK extends Activity
 		OutputStream out = null;
 		try {
 			in = assetManager.open(filename);
-			String newFileName = "/data/data/" + this.getPackageName() + "/" + filename;
+			String newFileName = assetsCopyDir + "/" + filename;
 			out = new FileOutputStream(newFileName);
 
 			byte[] buffer = new byte[1024];

@@ -9,6 +9,6 @@
 	<string name="working">It\'s working perfect!</string>
 	<string name="copied"> - Copied To Clipboard.</string>
 	<string name="error_url">Error! Invalid Playstore link.</string>
-	<string name="error_pkgname">Error! Cannot change the package name.</string>
-	<string name="error_create">Error! Cannot creat a new app.</string>
+	<string name="error_pkgname">Error! Cannot change the package name, Try clear the app data in Settings.</string>
+	<string name="error_create">Error! Cannot creat a new app, Try clear the app data in Settings.</string>
 </resources>
