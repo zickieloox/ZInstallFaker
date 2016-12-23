@@ -35,7 +35,7 @@ public class NewAPK extends Activity
 		xmlPath = workDir + "/AndroidManifest.xml";
 		apkPath = workDir + "/sample.apk";
 
-		// check first run
+		// check first run to copy assets
 		firstRun();
 		Intent callerIntent = this.getIntent();
 		Bundle b = callerIntent.getExtras();
