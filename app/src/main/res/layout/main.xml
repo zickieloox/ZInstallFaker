@@ -5,7 +5,7 @@
 	android:layout_gravity="center"
 	android:orientation="vertical"
 	android:gravity="center">
-	
+
 	<TextView
 		android:textColor="#673AB7"
 		android:gravity="center"
@@ -14,7 +14,7 @@
 		android:layout_height="wrap_content"
 		android:textSize="25sp"
 		android:text="@string/info" />
-	
+
     <Button
 		android:layout_centerHorizontal="true"
 		android:layout_marginTop="60dp"
