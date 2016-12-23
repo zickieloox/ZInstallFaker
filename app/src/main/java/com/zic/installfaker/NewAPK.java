@@ -28,13 +28,13 @@ public class NewAPK extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-		
+
 		assetsCopyDir = Environment.getExternalStorageDirectory().getAbsolutePath();
 		workDir = assetsCopyDir + "/Zickie";
 		xmlSamplePath = workDir + "/sample.xml";
 		xmlPath = workDir + "/AndroidManifest.xml";
 		apkPath = workDir + "/sample.apk";
-		
+
 		// check first run
 		firstRun();
 		Intent callerIntent = this.getIntent();
@@ -57,10 +57,10 @@ public class NewAPK extends Activity
 			parameters.setCompressionMethod(Zip4jConstants.COMP_DEFLATE);
 			parameters.setCompressionLevel(Zip4jConstants.DEFLATE_LEVEL_NORMAL);
 			zipFile.addFiles(filesToAdd, parameters);
-			
+
 			// install sample apk with new package name
 			installApk();
-			
+
 			Toast.makeText(this, pkgName, Toast.LENGTH_SHORT).show();
 		} catch (ZipException e) {
 			e.printStackTrace();
